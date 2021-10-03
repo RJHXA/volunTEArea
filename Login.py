@@ -16,21 +16,9 @@ if(opcao == 'Login' or opcao == 'login'):
     print("Login (e-mail): ")
     login = input("")
     # Verificação de E-mail, porém só conseguir com 1 Tentativa só
-    while(login != loginConfirmada[x]):
-        for i in loginConfirmada:
-            if(login == loginConfirmada[x]):
-                achou = True
-                break
-            x += 1
-        if(achou == True):
-            break
-        else:
-            break
-    # Se a Verificação do E-mail der certo vai para o aplicativo
-    if(x <= 8):
+    if(login in loginConfirmada):
         print("Senha: ")
         senha = int (input(""))
-
         # Verificação da senha do Usuário
         while(senha != senhaConfirmada):
             contadorTentativas = contadorTentativas + 1
