@@ -1,6 +1,7 @@
 opcao = str
 login = str
 loginConfirmada = ["rjhxa@cesar.school", "pecc@cesar.school", "masd@cesar.school", "lkaan@cesar.school", "vsdg@cesar.school", "mmbc@cesar.school", "lsb4@cesar.school", "jaa2@cesar.school", "bps@cesar.school"]
+cadastrados = ["Rafael", "Patrick", "Marcela", "Leonardo", "Vinícius", "Mariana", "Luiza", "Jamile", "Brunna"]
 senha = int
 senhaConfirmada = 123
 x = 0
@@ -13,7 +14,7 @@ opcao = input("")
 
 # Se ele escolher para Logar
 if(opcao == 'Login' or opcao == 'login'):
-    print("Login (e-mail): ")
+    print("E-mail: ")
     login = input("")
     # Verificação de E-mail, porém só conseguir com 1 Tentativa só
     if(login in loginConfirmada):
@@ -41,23 +42,23 @@ if(opcao == 'Login' or opcao == 'login'):
                 funcionalidades = str (input(""))
 
                 if(funcionalidades == 'FeedBack' or funcionalidades == 'Feedback'):
-                    print("Setor do FeedBack")
+                    print("| Setor do FeedBack |")
                     print("- Melhor Aplicativo =)")
 
                 elif(funcionalidades == 'Sugestões Anônimas'):
-                    print("Setor das Sugestões Anônimas")
+                    print("| Setor das Sugestões Anônimas |")
                     print("- Nada a melhorar")
 
                 elif(funcionalidades == 'Relatório dos Voluntários'):
-                    print("Setor do Relatório dos Voluntários")
+                    print("| Setor do Relatório dos Voluntários |")
                     print("- Rafael destinada a criança 01, 21/03 às 13:00")
 
                 elif(funcionalidades == 'Voluntários Cadastrados'):
-                    print("Setor do Voluntários Cadastrados")
-                    print("- Rafael\n- Patrick\n- Marcela\n- Leonardo\n- Vinicius\n- Mariana\n- Luiza\n- Jamile\n- Brunna")
-
+                    print("| Setor do Voluntários Cadastrados |")
+                    for i in range(len(cadastrados)):
+                        print("- ", cadastrados[i])
                 else:
-                    print("Setor do Calendário")
+                    print("| Setor do Calendário |")
                     print("30/07/2021 - Atividade")
             else:
             # VOLUNTÁRIOS
@@ -66,28 +67,28 @@ if(opcao == 'Login' or opcao == 'login'):
                 funcionalidades = str (input(""))
 
                 if(funcionalidades == 'Agendamento'):
-                    print("Setor do Agendamento")
+                    print("| Setor do Agendamento |")
                     print("Que dia você deseja agendar com a criança?")
                     agendamento = input("")
                     print("Aguarde a Confirmação dos Responsáveis!")
                 elif(funcionalidades == 'Criança Responsável'):
-                    print("Setor da Criança Responsável")
+                    print("| Setor da Criança Responsável |")
                     print("Que Criança você foi destinada?")
                     crianca = str(input(""))
                 elif(funcionalidades == 'Sugestão Anônimo'):
-                    print("Setor Sugestão Anônimo")
+                    print("| Setor Sugestão Anônimo |")
                     print("Deposite uma Sugestão aqui: ")
                     sugestao = str(input(""))
                     print("Obrigado pela sugestão!")
                 elif(funcionalidades == 'Relatório'):
-                    print("Setor do Relatório Diário")
+                    print("| Setor do Relatório Diário |")
                     print("Coloque seu Relatório do dia aqui:")
                     relatorio = str(input(""))
                 elif(funcionalidades == 'Calendário'):
-                    print("Setor do Calendário")
+                    print("| Setor do Calendário |")
                     print("30/07/2021 -> Atividade")
                 else:
-                    print("Setor da Devolutiva dos Pais")
+                    print("| Setor da Devolutiva dos Pais |")
                     print("Digite aqui:")
                     devolutiva = str(input(""))
     
