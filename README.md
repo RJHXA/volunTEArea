@@ -11,6 +11,7 @@ Windows: https://www.youtube.com/watch?v=nbFwejIsHlY
 <br>Linux: https://www.youtube.com/watch?v=gdgravCh_Bw
 <br>MAC: https://www.youtube.com/watch?v=ZM3I16Z-lxI
 
+***
 #### Comandos:
 
 - `git clone` >>> clonar um projeto / repositório
