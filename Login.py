@@ -4,9 +4,8 @@ loginConfirmada = ["rjhxa@cesar.school", "pecc@cesar.school", "masd@cesar.school
 cadastrados = ["Rafael", "Patrick", "Marcela", "Leonardo", "Vinícius", "Mariana", "Luiza", "Jamile", "Brunna"]
 senha = int
 senhaConfirmada = 123
-x = 0
-achou = False
-contadorTentativas = 0
+contadorTentativas = 1
+repetição = ""
 
 # Primeira Escolha do Usuário
 print("Escolha uma das opções: \nLogin | Cadastro")
@@ -24,7 +23,7 @@ if(opcao == 'Login' or opcao == 'login'):
         while(senha != senhaConfirmada):
             contadorTentativas = contadorTentativas + 1
             print("Senha Errada. Tente novamente!")
-            print("Você tem ", 3-contadorTentativas, " tentativas restantes!")
+            print("Você tem ", 4-contadorTentativas, " tentativas restantes!")
             senha = int (input(""))
         # Se o Usuário errar a senha 3 vezes, Fim do programa           
             if(contadorTentativas>=3):
@@ -38,60 +37,75 @@ if(opcao == 'Login' or opcao == 'login'):
             # GESTÃO
             # Escolha de qual Funcionalidade o Usuário quer usar
             if(escolha == 'Gestão'):
-                print("Que Funcionalidade você deseja acessar da Gestão? \nFeedBack | Sugestões Anônimas | Relatório dos Voluntários | Voluntários Cadastrados | Calendário")
-                funcionalidades = str (input(""))
+                while(repetição != "End"):
+                    print("\nQue Funcionalidade você deseja acessar da Gestão? \n1-FeedBack | 2- Sugestões Anônimas | 3- Relatório dos Voluntários | 4- Voluntários Cadastrados | 5- Calendário")
+                    funcionalidades = str (input(""))
 
-                if(funcionalidades == 'FeedBack' or funcionalidades == 'Feedback'):
-                    print("| Setor do FeedBack |")
-                    print("- Melhor Aplicativo =)")
+                    if(funcionalidades == '1'):
+                        print("| Setor do FeedBack |")
+                        print("- Trabalho do Voluntário Rafael foi excelente, só precia melhorar na questão do horário e chegar em ponto!")
 
-                elif(funcionalidades == 'Sugestões Anônimas'):
-                    print("| Setor das Sugestões Anônimas |")
-                    print("- Nada a melhorar")
+                    elif(funcionalidades == '2'):
+                        print("| Setor das Sugestões Anônimas |")
+                        print("- Nada a melhorar")
 
-                elif(funcionalidades == 'Relatório dos Voluntários'):
-                    print("| Setor do Relatório dos Voluntários |")
-                    print("- Rafael destinada a criança 01, 21/03 às 13:00")
+                    elif(funcionalidades == '3'):
+                        print("| Setor do Relatório dos Voluntários |")
+                        print("- Rafael destinada a criança 01, 21/03 às 13:00")
 
-                elif(funcionalidades == 'Voluntários Cadastrados'):
-                    print("| Setor do Voluntários Cadastrados |")
-                    for i in range(len(cadastrados)):
-                        print("- ", cadastrados[i])
-                else:
-                    print("| Setor do Calendário |")
-                    print("30/07/2021 - Atividade")
+                    elif(funcionalidades == '4'):
+                        print("| Setor do Voluntários Cadastrados |")
+                        for i in range(len(cadastrados)):
+                            print("- ", cadastrados[i])
+                        print("Deseja adicionar um Novo Voluntário?")
+                        print("Sim | Não")
+                        resposta = str(input(""))
+                        if(resposta == "Sim" or resposta == "sim"):
+                            print("Digite o nome do novo Voluntário:")
+                            cadastrados.append(input(""))
+                    else:
+                        print("| Setor do Calendário |")
+                        print("30/07/2021 - Atividade")
+                    print("\nBack | End")
+                    repetição = str(input(""))
+                    if(repetição == "End"):
+                        break
             else:
             # VOLUNTÁRIOS
             # Escolha de qual Funcionalidade o Usuário quer usar
-                print("Que Funcionalidade você deseja acessar dos Voluntários? \nAgendamento | Criança Responsável | Sugestão Anônimo | Relatório | Calendário | Devolutiva dos Pais")
-                funcionalidades = str (input(""))
+                while(escolha == "Voluntários"):
+                    print("\nQue Funcionalidade você deseja acessar dos Voluntários? \n1- Agendamento | 2- Criança Responsável | 3- Sugestão Anônimo | 4- Relatório | 5- Calendário | 6- Devolutiva dos Pais")
+                    funcionalidades = str (input(""))
 
-                if(funcionalidades == 'Agendamento'):
-                    print("| Setor do Agendamento |")
-                    print("Que dia você deseja agendar com a criança?")
-                    agendamento = input("")
-                    print("Aguarde a Confirmação dos Responsáveis!")
-                elif(funcionalidades == 'Criança Responsável'):
-                    print("| Setor da Criança Responsável |")
-                    print("Que Criança você foi destinada?")
-                    crianca = str(input(""))
-                elif(funcionalidades == 'Sugestão Anônimo'):
-                    print("| Setor Sugestão Anônimo |")
-                    print("Deposite uma Sugestão aqui: ")
-                    sugestao = str(input(""))
-                    print("Obrigado pela sugestão!")
-                elif(funcionalidades == 'Relatório'):
-                    print("| Setor do Relatório Diário |")
-                    print("Coloque seu Relatório do dia aqui:")
-                    relatorio = str(input(""))
-                elif(funcionalidades == 'Calendário'):
-                    print("| Setor do Calendário |")
-                    print("30/07/2021 -> Atividade")
-                else:
-                    print("| Setor da Devolutiva dos Pais |")
-                    print("Digite aqui:")
-                    devolutiva = str(input(""))
-    
+                    if(funcionalidades == '1'):
+                        print("| Setor do Agendamento |")
+                        print("Que dia você deseja agendar com a criança?")
+                        agendamento = input("")
+                        print("Aguarde a Confirmação dos Responsáveis!")
+                    elif(funcionalidades == '2'):
+                        print("| Setor da Criança Responsável |")
+                        print("Que Criança você foi destinada?")
+                        crianca = str(input(""))
+                    elif(funcionalidades == '3'):
+                        print("| Setor Sugestão Anônimo |")
+                        print("Deposite uma Sugestão aqui: ")
+                        sugestao = str(input(""))
+                        print("Obrigado pela sugestão!")
+                    elif(funcionalidades == '4'):
+                        print("| Setor do Relatório Diário |")
+                        print("Coloque seu Relatório do dia aqui:")
+                        relatorio = str(input(""))
+                    elif(funcionalidades == '5'):
+                        print("| Setor do Calendário |")
+                        print("30/07/2021 -> Atividade")
+                    else:
+                        print("| Setor da Devolutiva dos Pais |")
+                        print("Digite aqui:")
+                        devolutiva = str(input(""))
+                    print("\nBack | End")
+                    repetição = str(input(""))
+                    if(repetição == "End"):
+                        break
         else:
 # Se o Usuário Errar a senha 3 Vezes. Fim do Programa
             print("Você errou 3 Tentativas. Tente Novamente mais tarde!")
@@ -113,9 +127,9 @@ else:
         print("Você já se voluntariou alguma vez na sua vida?")
         resposta = str(input(""))
         print("Digite seu Cpf:")
-        cpf = int (input(""))
+        cpf = str (input(""))
         print("Digite seu número de contato:")
-        numero = int(input(""))
+        numero = str(input(""))
         print("Digite seu E-mail:")
         email= input("")
 
@@ -132,9 +146,9 @@ else:
         print("Qual a Data de Nascimento da Criança?")
         idade = input("")
         print("Digite o Cpf do Responsável:")
-        cpf = int (input(""))
+        cpf = str (input(""))
         print("Digite o número de contato do Responsável:")
-        numero = int(input(""))
+        numero = str(input(""))
         print("Digite o E-mail do Responsável:")
         email= input("")
 
