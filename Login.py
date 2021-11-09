@@ -7,9 +7,6 @@ senhaConfirmada = 123
 contadorTentativas = 1
 repetição = ""
 
-# Primeira Escolha do Usuário
-print("Escolha uma das opções: \nLogin | Cadastro")
-opcao = input("")
 
 # Se ele escolher para Logar
 if(opcao == 'Login' or opcao == 'login'):
@@ -153,5 +150,3 @@ else:
         email= input("")
 
         print("Aguarde a Confirmação do Cadastro da Criança!")
-
-
